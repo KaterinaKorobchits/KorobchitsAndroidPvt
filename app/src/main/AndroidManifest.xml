@@ -15,5 +15,6 @@
         </activity>
         <activity android:name=".dz0.Dz0Activity"/>
         <activity android:name=".dz1.Dz1Activity"/>
+        <activity android:name=".dz2.Dz2LoginActivity"/>
     </application>
 </manifest>

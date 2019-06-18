@@ -17,6 +17,7 @@
     <color name="redDenmarkFlag">#c7042c</color>
     <color name="blueThailandFlag">#292549</color>
     <color name="redThailandFlag">#A6122D</color>
-
-
+    <color name="whiteTransparentBackground">#26FFFFFF</color>
+    <color name="dz2Login">#51a5bf</color>
+    <color name="dz2CreateAccount">#b8a77f</color>
 </resources>

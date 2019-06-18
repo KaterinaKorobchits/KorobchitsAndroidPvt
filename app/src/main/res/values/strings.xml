@@ -3,6 +3,13 @@
     <string name="first_text">Lucky</string>
     <string name="second_text">Dog</string>
     <string name="button">Start</string>
+    <string name="homework0">Homework_0</string>
     <string name="homework1">Homework_1</string>
-    <string name="homework2">Homework_2</string>
+    <string name="homework2part1">Homework_2:1</string>
+    <string name="homework2part2">Homework_2:2</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Log in</string>
+    <string name="createAccount">Create account</string>
+    <string name="forgotPassword"><u>Forgot your username/password?</u></string>
 </resources>
