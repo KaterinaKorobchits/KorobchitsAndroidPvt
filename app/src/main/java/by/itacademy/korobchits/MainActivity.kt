@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import by.itacademy.korobchits.dz0.Dz0Activity
 import by.itacademy.korobchits.dz1.Dz1Activity
+import by.itacademy.korobchits.dz2.Dz2Activity
 import by.itacademy.korobchits.dz2.Dz2LoginActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,7 +30,7 @@ class MainActivity : Activity() {
         }
 
         buttonDz2part2.setOnClickListener() {
-            val intent = Intent(this@MainActivity, Dz1Activity::class.java)
+            val intent = Intent(this@MainActivity, Dz2Activity::class.java)
             startActivity(intent)
         }
     }

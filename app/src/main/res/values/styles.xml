@@ -16,4 +16,15 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="dz2EditText">
+        <item name="android:background">@color/whiteTransparentBackground</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:fontFamily">@font/monda_regular</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
 </resources>

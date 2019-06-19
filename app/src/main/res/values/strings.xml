@@ -12,4 +12,6 @@
     <string name="login">Log in</string>
     <string name="createAccount">Create account</string>
     <string name="forgotPassword"><u>Forgot your username/password?</u></string>
+    <string name="pleaseEnterTheImageURL">Please enter the URL of image...</string>
+    <string name="download">Download</string>
 </resources>
