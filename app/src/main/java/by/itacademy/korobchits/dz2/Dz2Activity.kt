@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_dz2.*
 
 class Dz2Activity : Activity() {
 
-    private lateinit var url : String
+    private lateinit var url: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,7 @@ class Dz2Activity : Activity() {
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
                     url = editText.text.toString()
-                    //url = "https://klike.net/uploads/posts/2018-07/1531483275_4.jpg"
+                    // url = "https://klike.net/uploads/posts/2018-07/1531483275_4.jpg"
                     dz2ButtonDownload.visibility = View.VISIBLE
                     false
                 }
@@ -36,7 +36,7 @@ class Dz2Activity : Activity() {
             Picasso.get()
                 .load(url)
                 .error(R.drawable.page_not_found)
-                .transform(CircleTransform())
+                .transform(CircleTransformation())
                 .into(myImage, object : Callback {
                     override fun onSuccess() {
                         dz2ProgressBar.visibility = View.GONE
