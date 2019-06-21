@@ -3,4 +3,14 @@
     <string name="first_text">Lucky</string>
     <string name="second_text">Dog</string>
     <string name="button">Start</string>
+    <string name="dz3Trophies">Trophies</string>
+    <string name="dz3Following">Following</string>
+    <string name="dz3Followers">Followers</string>
+    <string name="dz3Name">Name</string>
+    <string name="dz3Country">Country</string>
+    <string name="dz3PostalCode">Postal code</string>
+    <string name="dz3Birth">Date of Birth</string>
+    <string name="dz3Gender">Gender</string>
+    <string name="dz3Height">Height</string>
+    <string name="dz3Phone">Phone</string>
 </resources>
