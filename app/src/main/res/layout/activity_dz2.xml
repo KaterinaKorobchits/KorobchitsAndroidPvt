@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainActivityBackground"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/dz2EditText"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/whiteTransparentBackground"
+        android:drawableStart="@drawable/download"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/monda_regular"
+        android:hint="@string/pleaseEnterTheImageURL"
+        android:imeOptions="actionDone"
+        android:inputType="textUri"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textCursorDrawable="@null" />
+
+    <Button
+        android:id="@+id/dz2ButtonDownload"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/whiteTransparentBackground"
+        android:text="@string/download"
+        android:textColor="@android:color/white"
+        android:textScaleX="1.2"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ProgressBar
+        android:id="@+id/dz2ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/myImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"/>
+    </FrameLayout>
+
+</LinearLayout>
