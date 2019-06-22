@@ -7,6 +7,7 @@
     <string name="homework1">Homework_1</string>
     <string name="homework2part1">Homework_2:1</string>
     <string name="homework2part2">Homework_2:2</string>
+    <string name="homework3">Homework_3</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Log in</string>
@@ -14,4 +15,14 @@
     <string name="forgotPassword"><u>Forgot your username/password?</u></string>
     <string name="pleaseEnterTheImageURL">Please enter the URL of image...</string>
     <string name="download">Download</string>
+    <string name="dz3Trophies">Trophies</string>
+    <string name="dz3Following">Following</string>
+    <string name="dz3Followers">Followers</string>
+    <string name="dz3Name">Name</string>
+    <string name="dz3Country">Country</string>
+    <string name="dz3PostalCode">Postal code</string>
+    <string name="dz3Birth">Date of Birth</string>
+    <string name="dz3Gender">Gender</string>
+    <string name="dz3Height">Height</string>
+    <string name="dz3Phone">Phone</string>
 </resources>

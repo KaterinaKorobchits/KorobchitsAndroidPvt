@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.TextView
 import by.itacademy.korobchits.R
 
-
 class Dz1Activity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,5 +46,4 @@ class Dz1Activity : Activity() {
         view?.setText(name)
         view?.visibility = View.VISIBLE
     }
-
 }

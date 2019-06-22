@@ -20,4 +20,7 @@
     <color name="whiteTransparentBackground">#26FFFFFF</color>
     <color name="dz2Login">#51a5bf</color>
     <color name="dz2CreateAccount">#b8a77f</color>
+    <color name="dz3Orange">#d45807</color>
+    <color name="dz3Gray">#A7A4A4</color>
+    <color name="dz3White">#ffffff</color>
 </resources>

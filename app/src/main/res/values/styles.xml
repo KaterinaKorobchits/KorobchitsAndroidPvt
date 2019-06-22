@@ -8,6 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="dz3Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dz3Gray</item>
+        <item name="android:fontFamily">@font/monda_regular</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="dz3Number">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dz3Orange</item>
+        <item name="android:fontFamily">@font/monda_bold</item>
+        <item name="android:layout_marginTop">-5dp</item>
+    </style>
+
+    <style name="dz3Value">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dz3White</item>
+        <item name="android:fontFamily">@font/monda_bold</item>
+    </style>
+
     <style name="dz1">
         <item name="android:gravity">center</item>
         <item name="android:visibility">gone</item>
