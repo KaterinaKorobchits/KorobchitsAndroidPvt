@@ -23,4 +23,6 @@
     <color name="dz3Orange">#d45807</color>
     <color name="dz3Gray">#A7A4A4</color>
     <color name="dz3White">#ffffff</color>
+    <color name="dz4NumberClock">#ffffff</color>
+    <color name="dz4Clock">#6B59DA</color>
 </resources>
