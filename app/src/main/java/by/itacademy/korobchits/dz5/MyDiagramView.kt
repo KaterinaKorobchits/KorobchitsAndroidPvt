@@ -98,6 +98,13 @@ class MyDiagramView : View {
         setMeasuredDimension(customSizeWidth, customSizeHeight)
     }
 
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+
+        super.onSizeChanged(w, h, oldw, oldh)
+
+        calculateRect()
+    }
+
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas ?: return
@@ -107,7 +114,6 @@ class MyDiagramView : View {
 
     private fun drawDiagram(canvas: Canvas) {
 
-        calculateRect()
         calculateDegrees()
 
         var startAngle = 0f
