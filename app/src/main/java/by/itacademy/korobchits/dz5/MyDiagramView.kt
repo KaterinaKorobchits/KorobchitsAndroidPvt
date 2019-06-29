@@ -8,7 +8,6 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.os.Build
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
@@ -75,21 +74,18 @@ class MyDiagramView : View {
         var customSizeWidth = 0
 
         when (modeWidth) {
-            MeasureSpec.AT_MOST -> {
+            MeasureSpec.AT_MOST, MeasureSpec.UNSPECIFIED -> {
                 customSizeWidth = sizeWidth
                 customSizeHeight = sizeWidth
             }
             MeasureSpec.EXACTLY -> {
                 customSizeWidth = sizeWidth
                 customSizeHeight = sizeHeight
-            }
-            MeasureSpec.UNSPECIFIED -> {
-                Log.e("AAA", "UNSPECIFIED")
             }
         }
 
         when (modeHeight) {
-            MeasureSpec.AT_MOST -> {
+            MeasureSpec.AT_MOST, MeasureSpec.UNSPECIFIED -> {
                 customSizeWidth = sizeWidth
                 customSizeHeight = sizeWidth
             }
@@ -97,17 +93,9 @@ class MyDiagramView : View {
                 customSizeWidth = sizeWidth
                 customSizeHeight = sizeHeight
             }
-            MeasureSpec.UNSPECIFIED -> {
-                Log.e("AAA", "UNSPECIFIED")
-            }
         }
 
         setMeasuredDimension(customSizeWidth, customSizeHeight)
-    }
-
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        super.onSizeChanged(w, h, oldw, oldh)
-        invalidate()
     }
 
     override fun onDraw(canvas: Canvas?) {
