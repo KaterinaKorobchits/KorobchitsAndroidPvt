@@ -25,4 +25,7 @@
     <color name="dz3White">#ffffff</color>
     <color name="dz4NumberClock">#ffffff</color>
     <color name="dz4Clock">#6B59DA</color>
+    <color name="dz6ItemBackground">#efdecd</color>
+    <color name="dz6AddButton">#987AF5</color>
+    <color name="dz6Create">#62AF0F</color>
 </resources>

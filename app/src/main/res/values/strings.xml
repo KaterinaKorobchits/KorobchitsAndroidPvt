@@ -28,4 +28,11 @@
     <string name="dz3Gender">Gender</string>
     <string name="dz3Height">Height</string>
     <string name="dz3Phone">Phone</string>
+    <string name="dz6Name">Name:</string>
+    <string name="dz6Age">Age:</string>
+    <string name="dz6ImageUrl">Image URL:</string>
+    <string name="dz6Search">Search...</string>
+    <string name="dz6DeleteButton">Delete</string>
+    <string name="dz6EditButton">Edit</string>
+    <string name="dz6SaveButton">Save</string>
 </resources>

@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/mainActivityBackground">
+    android:background="@color/mainActivityBackground"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <EditText
+        android:id="@+id/dz6Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/dz6RecycleView"
+        android:layout_alignParentTop="true"
+        android:background="@color/mainActivityBackground"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:drawablePadding="12dp"
+        android:drawableTint="@color/dz3White"
+        android:hint="@string/dz6Search"
+        android:inputType="text"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/dz6ItemBackground"
+        android:textColorHint="@android:color/white"
+        android:textCursorDrawable="@null"
+        android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dz6RecycleView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dz6Search" />
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/dz6AddButton"
+        android:layout_width="@dimen/dz6AddButton"
+        android:layout_height="@dimen/dz6AddButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/dz6_add_button_selector"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_add_circle_black_24dp"
+        android:tint="@android:color/white" />
+</RelativeLayout>

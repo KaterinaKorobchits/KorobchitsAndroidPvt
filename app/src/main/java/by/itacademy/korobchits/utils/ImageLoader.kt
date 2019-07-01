@@ -22,7 +22,6 @@ fun loadRoundImage(url: String, imageView: ImageView, listener: RequestListener<
 fun loadRoundImage(url: String, imageView: ImageView) {
     Glide.with(App.instance)
         .load(url)
-
         .error(R.drawable.ic_image_not_found_black_24dp)
         .circleCrop()
         .listener(object : RequestListener<Drawable> {
@@ -53,13 +52,42 @@ fun loadRoundImage(url: String, imageView: ImageView) {
         .into(imageView)
 }
 
-fun loadImage(url: String, imageView: ImageView, listener: OnLoadImageListener) {
+fun loadImage(url: String, imageView: ImageView) {
     Glide.with(App.instance)
         .load(url)
+        .error(R.drawable.ic_image_not_found_black_24dp)
+        .listener(object : RequestListener<Drawable> {
+            override fun onResourceReady(
+                resource: Drawable?,
+                model: Any?,
+                target: Target<Drawable>?,
+                dataSource: DataSource?,
+                isFirstResource: Boolean
+            ): Boolean {
+                return false
+            }
+
+            override fun onLoadFailed(
+                exception: GlideException?,
+                model: Any?,
+                target: Target<Drawable>?,
+                isFirstResource: Boolean
+            ): Boolean {
+                Toast.makeText(
+                    App.instance,
+                    App.instance.resources.getString(R.string.image_not_found),
+                    Toast.LENGTH_SHORT
+                ).show()
+                return false
+            }
+        })
         .into(imageView)
 }
 
-interface OnLoadImageListener {
-    fun onOk()
-    fun onError()
+fun loadImage(url: String, imageView: ImageView, listener: RequestListener<Drawable>) {
+    Glide.with(App.instance)
+        .load(url)
+        .error(R.drawable.ic_image_not_found_black_24dp)
+        .listener(listener)
+        .into(imageView)
 }
