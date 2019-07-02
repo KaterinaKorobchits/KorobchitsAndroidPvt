@@ -12,9 +12,6 @@ import kotlinx.android.synthetic.main.activity_dz6_student_edit.*
 
 class Dz6StudentEditActivity : Activity() {
 
-    private var idStudent = 0L
-    private var isNewStudent = false
-
     private val pattern = Patterns.WEB_URL
 
     private lateinit var ageEditText: EditText
@@ -23,8 +20,9 @@ class Dz6StudentEditActivity : Activity() {
 
     companion object {
         private const val ID_STUDENT = "ID_STUDENT"
+        private const val ID_STUDENT_NEW = "NEW_STUDENT"
 
-        fun getIntent(context: Context, idStudent: Long = System.currentTimeMillis()): Intent {
+        fun getIntent(context: Context, idStudent: String = ID_STUDENT_NEW): Intent {
             val intent = Intent(context, Dz6StudentEditActivity::class.java)
             intent.putExtra(ID_STUDENT, idStudent)
             return intent
@@ -40,14 +38,18 @@ class Dz6StudentEditActivity : Activity() {
         nameEditText = findViewById(R.id.dz6NameEditText)
         urlEditText = findViewById(R.id.dz6UrlEditText)
 
-        idStudent = intent.getLongExtra(ID_STUDENT, 0)
+        val idStudent = intent.getStringExtra(ID_STUDENT)
 
-        val oldStudent: Dz6Student? = Dz6StudentList.getInstance().listStudents.find { it.id == idStudent }
-        oldStudent?.let {
-            nameEditText.setText(it.name)
-            ageEditText.setText(it.age.toString())
-            urlEditText.setText(it.imageUrl)
-        } ?: let { isNewStudent = true }
+        if (idStudent != ID_STUDENT_NEW) {
+            val oldStudent = Dz6StudentsStorage.getStudentById(idStudent)
+            if (oldStudent == null)
+                this.finish()
+            else {
+                nameEditText.setText(oldStudent.name)
+                ageEditText.setText(oldStudent.age.toString())
+                urlEditText.setText(oldStudent.imageUrl)
+            }
+        }
 
         dz6SaveStudentButton.setOnClickListener() {
 
@@ -57,14 +59,16 @@ class Dz6StudentEditActivity : Activity() {
 
             if (!pattern.matcher(url).matches())
                 Toast.makeText(this, "***Image URL: Not valid URL***", Toast.LENGTH_SHORT).show()
+            else if (name.isEmpty())
+                Toast.makeText(this, "***Name: Must be filled in***", Toast.LENGTH_SHORT).show()
             else if (age == null)
                 Toast.makeText(this, "***Age: Must be filled in***", Toast.LENGTH_SHORT).show()
             else {
-                when (isNewStudent) {
-                    true -> Dz6StudentList.getInstance().listStudents.add(Dz6Student(idStudent, url, name, age))
-                    false -> {
-                        oldStudent?.apply { this.name = name; this.age = age; this.imageUrl = url }
-                    }
+                when (idStudent) {
+                    ID_STUDENT_NEW -> Dz6StudentsStorage.addStudent(
+                        Dz6Student(System.currentTimeMillis().toString(), url, name, age)
+                    )
+                    else -> Dz6StudentsStorage.addStudent(Dz6Student(idStudent, url, name, age))
                 }
                 this.finish()
             }

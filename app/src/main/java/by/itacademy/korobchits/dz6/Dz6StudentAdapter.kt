@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import by.itacademy.korobchits.R
 
 class Dz6StudentAdapter(
-    private val items: MutableList<Dz6Student>,
+    private var items: List<Dz6Student>,
     private val listener: ClickListener
 ) : RecyclerView.Adapter<Dz6StudentHolder>() {
 
@@ -26,19 +26,12 @@ class Dz6StudentAdapter(
 
     override fun getItemCount() = items.size
 
-    fun filter(filterList: List<Dz6Student>) {
-        items.clear()
-        items.addAll(filterList)
-        notifyDataSetChanged()
-    }
-
     interface ClickListener {
         fun onStudentItemClick(item: Dz6Student)
     }
 
-    fun update() {
-        items.clear()
-        items.addAll(Dz6StudentList.getInstance().listStudents)
+    fun update(list: List<Dz6Student>) {
+        items = list
         notifyDataSetChanged()
     }
 }
