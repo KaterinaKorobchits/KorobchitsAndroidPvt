@@ -9,6 +9,8 @@ import by.itacademy.korobchits.dz2.Dz2Activity
 import by.itacademy.korobchits.dz2.Dz2LoginActivity
 import by.itacademy.korobchits.dz3.Dz3Activity
 import by.itacademy.korobchits.dz4.Dz4Activity
+import by.itacademy.korobchits.dz5.Dz5Activity
+import by.itacademy.korobchits.dz5.Dz5ActivityOwl
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
@@ -43,6 +45,15 @@ class MainActivity : Activity() {
 
         buttonDz4.setOnClickListener() {
             val intent = Intent(this@MainActivity, Dz4Activity::class.java)
+            startActivity(intent)
+        }
+
+        buttonDz5part1.setOnClickListener() {
+            val intent = Intent(this@MainActivity, Dz5Activity::class.java)
+            startActivity(intent)
+        }
+        buttonDz5part2.setOnClickListener() {
+            val intent = Intent(this@MainActivity, Dz5ActivityOwl::class.java)
             startActivity(intent)
         }
     }
