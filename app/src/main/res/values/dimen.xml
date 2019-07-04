@@ -6,4 +6,6 @@
     <dimen name="dz4line">2dp</dimen>
     <dimen name="dz5line">1dp</dimen>
     <dimen name="dz5TextNumber">15sp</dimen>
+    <dimen name="dz6RecycleItem">6dp</dimen>
+    <dimen name="dz6AddButton">80dp</dimen>
 </resources>

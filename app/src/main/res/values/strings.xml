@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">KorobchitsAndroidPvt</string>
+    <string name="image_not_found">Image not found</string>
     <string name="first_text">Lucky</string>
     <string name="second_text">Dog</string>
     <string name="button">Start</string>
@@ -11,6 +12,7 @@
     <string name="homework4">Homework_4</string>
     <string name="homework5part1">Homework_5:1</string>
     <string name="homework5part2">Homework_5:2</string>
+    <string name="homework6">Homework_6</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Log in</string>
@@ -30,4 +32,11 @@
     <string name="dz3Phone">Phone</string>
     <string name="dz5EnterHint">Enter space-separated numbers</string>
     <string name="dz5CreateChart">Create a chart</string>
+    <string name="dz6Name">Name:</string>
+    <string name="dz6Age">Age:</string>
+    <string name="dz6ImageUrl">Image URL:</string>
+    <string name="dz6Search">Search...</string>
+    <string name="dz6DeleteButton">Delete</string>
+    <string name="dz6EditButton">Edit</string>
+    <string name="dz6SaveButton">Save</string>
 </resources>

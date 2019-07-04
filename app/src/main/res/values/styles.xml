@@ -47,4 +47,21 @@
         <item name="android:textCursorDrawable">@null</item>
     </style>
 
+    <style name="Dz6Label">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Dz6PropertyValue">
+        <item name="android:textColor">@color/dz6ItemBackground</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Dz6Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
 </resources>
