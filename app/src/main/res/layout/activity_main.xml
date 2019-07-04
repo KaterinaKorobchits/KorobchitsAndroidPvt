@@ -67,6 +67,24 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/buttonDz5part1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/homework5part1"
+            android:textColor="@color/mainActivityBackground"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonDz5part2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/homework5part2"
+            android:textColor="@color/mainActivityBackground"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/buttonDz6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
