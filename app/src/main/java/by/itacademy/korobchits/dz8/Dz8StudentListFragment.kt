@@ -107,7 +107,7 @@ class Dz8StudentListFragment : Fragment(), Dz6StudentAdapter.ClickListener {
     }
 
     fun updateRecyclerList() {
-        adapter.update(Dz6StudentsStorage.getStudentsList())
+        adapter.update(Dz6StudentsStorage.filter(dz8SearchText))
     }
 }
 
