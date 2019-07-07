@@ -30,5 +30,6 @@
         <activity android:name=".dz6.Dz6StudentListActivity"/>
         <activity android:name=".dz6.Dz6StudentDetailsActivity"/>
         <activity android:name=".dz6.Dz6StudentEditActivity"/>
+        <activity android:name=".dz8.Dz8Activity"/>
     </application>
 </manifest>

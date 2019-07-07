@@ -12,6 +12,7 @@ import by.itacademy.korobchits.dz4.Dz4Activity
 import by.itacademy.korobchits.dz6.Dz6StudentListActivity
 import by.itacademy.korobchits.dz5.Dz5Activity
 import by.itacademy.korobchits.dz5.Dz5ActivityOwl
+import by.itacademy.korobchits.dz8.Dz8Activity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
@@ -61,6 +62,11 @@ class MainActivity : Activity() {
 
         buttonDz6.setOnClickListener() {
             val intent = Intent(this@MainActivity, Dz6StudentListActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonDz8.setOnClickListener() {
+            val intent = Intent(this@MainActivity, Dz8Activity::class.java)
             startActivity(intent)
         }
     }
