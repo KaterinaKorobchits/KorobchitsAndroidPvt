@@ -88,7 +88,7 @@ class Dz8StudentListFragment : Fragment(), Dz6StudentAdapter.ClickListener {
         if (saveSearch != dz8SearchText) {
             dz8SearchText = saveSearch
             dz8Search.setText(dz8SearchText)
-            adapter.update(Dz6StudentsStorage.filter(dz8SearchText))
+            updateRecyclerList()
         }
     }
 
