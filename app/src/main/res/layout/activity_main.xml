@@ -92,5 +92,14 @@
             android:textColor="@color/mainActivityBackground"
             android:textSize="30sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonDz9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/homework9"
+            android:textColor="@color/mainActivityBackground"
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>
