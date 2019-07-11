@@ -4,6 +4,10 @@ object Dz6StudentsStorage {
 
     private var listStudents: MutableList<Dz6Student> = mutableListOf()
 
+    init {
+        listStudents = getStudentsListFilled()
+    }
+
     fun getStudentsList(): MutableList<Dz6Student> {
         return listStudents
     }
