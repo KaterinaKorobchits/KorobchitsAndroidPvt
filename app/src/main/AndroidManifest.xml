@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="by.itacademy.korobchits">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -13,9 +16,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,12 +33,13 @@
         <activity android:name=".dz2.Dz2LoginActivity" />
         <activity android:name=".dz2.Dz2Activity" />
         <activity android:name=".dz3.Dz3Activity" />
-        <activity android:name=".dz4.Dz4Activity"/>
-        <activity android:name=".dz5.Dz5Activity"/>
-        <activity android:name=".dz5.Dz5ActivityOwl"/>
-        <activity android:name=".dz6.Dz6StudentListActivity"/>
-        <activity android:name=".dz6.Dz6StudentDetailsActivity"/>
-        <activity android:name=".dz6.Dz6StudentEditActivity"/>
-        <activity android:name=".dz8.Dz8Activity"/>
+        <activity android:name=".dz4.Dz4Activity" />
+        <activity android:name=".dz5.Dz5Activity" />
+        <activity android:name=".dz5.Dz5ActivityOwl" />
+        <activity android:name=".dz6.Dz6StudentListActivity" />
+        <activity android:name=".dz6.Dz6StudentDetailsActivity" />
+        <activity android:name=".dz6.Dz6StudentEditActivity" />
+        <activity android:name=".dz8.Dz8Activity" />
+        <activity android:name=".dz9.Dz9Activity" />
     </application>
 </manifest>

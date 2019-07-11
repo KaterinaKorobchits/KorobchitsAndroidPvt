@@ -29,4 +29,5 @@
     <color name="dz6ItemBackground">#efdecd</color>
     <color name="dz6AddButton">#987AF5</color>
     <color name="dz6Create">#62AF0F</color>
+    <color name="dz9">#62AF0F</color>
 </resources>
