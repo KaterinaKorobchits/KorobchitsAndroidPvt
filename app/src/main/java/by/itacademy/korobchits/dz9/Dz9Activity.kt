@@ -25,7 +25,7 @@ class Dz9Activity : FragmentActivity(), Dz9Fragment.ClickListener, CarRepository
 
     private val carRepository: CarRepository = provideCarRepository()
     private val listPoi: MutableList<Poi> = mutableListOf()
-    private lateinit var mMap: GoogleMap
+    private lateinit var map: GoogleMap
 
     private var flagMapReady = false
     private var flagDataReady = false
@@ -67,18 +67,18 @@ class Dz9Activity : FragmentActivity(), Dz9Fragment.ClickListener, CarRepository
 
     override fun onPoiItemClick(item: Poi) {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        mMap.clear()
+        map.clear()
         val car = LatLng(
             item.coordinate?.latitude!!,
             item.coordinate.longitude
         )
-        mMap.addMarker(MarkerOptions().position(car).title("Hello"))
-        mMap.addMarker(MarkerOptions().position(car).icon(BitmapDescriptorFactory.fromBitmap(arrowBitmap)).rotation(item.heading!!.toFloat()))
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(car, 17f))
+        map.addMarker(MarkerOptions().position(car).title("Hello"))
+        map.addMarker(MarkerOptions().position(car).icon(BitmapDescriptorFactory.fromBitmap(arrowBitmap)).rotation(item.heading!!.toFloat()))
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(car, 17f))
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+        map = googleMap
         flagMapReady = true
 
         if (flagDataReady)
@@ -89,12 +89,12 @@ class Dz9Activity : FragmentActivity(), Dz9Fragment.ClickListener, CarRepository
         val builder = LatLngBounds.builder()
         listPoi.forEach {
             val coord = LatLng(it.coordinate?.latitude!!, it.coordinate.longitude)
-            mMap.addMarker(MarkerOptions().position(coord))
+            map.addMarker(MarkerOptions().position(coord))
             builder.include(coord)
         }
 
         val bounds = builder.build()
-        mMap.moveCamera(
+        map.moveCamera(
             CameraUpdateFactory.newLatLngBounds(
                 bounds,
                 resources.displayMetrics.widthPixels,
