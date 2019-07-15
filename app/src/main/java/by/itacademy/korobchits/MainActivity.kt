@@ -77,6 +77,11 @@ class MainActivity : Activity() {
             startActivity(intent)
         }
 
+        buttonDz11part1.setOnClickListener() {
+            val intent = Intent(this@MainActivity, by.itacademy.korobchits.dz11.part1.Dz11Activity::class.java)
+            startActivity(intent)
+        }
+
         buttonDz11part2.setOnClickListener() {
             val intent = Intent(this@MainActivity, Dz11Activity::class.java)
             startActivity(intent)
