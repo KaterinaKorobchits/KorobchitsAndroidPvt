@@ -12,13 +12,12 @@ class Dz11DetailsPresenter {
         this.view = view
     }
 
-    fun getStudentById(idStudent: String?): Dz6Student? {
+    fun getStudentById(idStudent: String?) {
         user = idStudent?.let { Dz6StudentsStorage.getStudentById(it) }
         if (user == null)
             view?.goBack()
         else
             view?.show(user!!)
-        return user
     }
 
     fun deleteStudent() {
