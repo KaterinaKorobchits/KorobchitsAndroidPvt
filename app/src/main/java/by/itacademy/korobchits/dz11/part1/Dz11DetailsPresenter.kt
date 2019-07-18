@@ -1,9 +1,8 @@
 package by.itacademy.korobchits.dz11.part1
 
 import by.itacademy.korobchits.dz6.Dz6Student
-import by.itacademy.korobchits.dz6.Dz6StudentsStorage
 
-class Dz11DetailsPresenter {
+class Dz11DetailsPresenter(private val idStudent: String?) {
 
     private var view: Dz11DetailsView? = null
     private var user: Dz6Student? = null
@@ -12,8 +11,8 @@ class Dz11DetailsPresenter {
         this.view = view
     }
 
-    fun getStudentById(idStudent: String?) {
-        user = idStudent?.let { Dz6StudentsStorage.getStudentById(it) }
+    fun getStudentById() {
+        user = idStudent?.let { Dz11StudentsStorage.getStudentById(it) }
         if (user == null)
             view?.goBack()
         else
@@ -21,7 +20,7 @@ class Dz11DetailsPresenter {
     }
 
     fun deleteStudent() {
-        Dz6StudentsStorage.removeStudent(user!!)
+        idStudent?.let { Dz11StudentsStorage.removeStudent(it) }
     }
 
     fun detach() {

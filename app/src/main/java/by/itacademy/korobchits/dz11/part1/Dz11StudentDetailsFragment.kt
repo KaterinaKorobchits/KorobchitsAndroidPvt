@@ -47,10 +47,10 @@ class Dz11StudentDetailsFragment : Fragment(), Dz11DetailsView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_dz8_student_details, container, false)
 
-        presenter = Dz11DetailsPresenter()
-        presenter.setView(this)
-
         val idStudent = arguments?.getString(ID_STUDENT, "")
+
+        presenter = Dz11DetailsPresenter(idStudent)
+        presenter.setView(this)
 
         dz8ImageView = view.findViewById(R.id.dz8ImageView)
         dz8NameTextView = view.findViewById(R.id.dz8NameTextView)
@@ -58,7 +58,7 @@ class Dz11StudentDetailsFragment : Fragment(), Dz11DetailsView {
         val dz8DeleteStudentButton = view.findViewById<Button>(R.id.dz8DeleteStudentButton)
         val dz8EditStudentButton = view.findViewById<Button>(R.id.dz8EditStudentButton)
 
-        presenter.getStudentById(idStudent)
+        presenter.getStudentById()
 
         dz8DeleteStudentButton.setOnClickListener() {
             presenter.deleteStudent()

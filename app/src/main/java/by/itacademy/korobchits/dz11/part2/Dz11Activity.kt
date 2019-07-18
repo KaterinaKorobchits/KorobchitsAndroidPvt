@@ -2,7 +2,6 @@ package by.itacademy.korobchits.dz11.part2
 
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
@@ -29,9 +28,24 @@ class Dz11Activity : FragmentActivity(), OnMapReadyCallback {
     private lateinit var arrowBitmap: Bitmap
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
 
+    private val observerState = Observer<Dz11State> {
+        when (it) {
+            is Dz11State.LoadFailed -> {
+                showError(it.throwable)
+            }
+            is Dz11State.Data -> {
+                drawCarsOnMap(it.list)
+            }
+        }
+    }
+
+    private val observerSelectedItem = Observer<Poi> {
+        if (it != null)
+            focusOnTheCar(it)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.e("AAA", "Dz11Activity - onCreate")
         setContentView(R.layout.activity_dz9)
 
         viewModel = ViewModelProviders.of(this).get(Dz11ViewModel::class.java)
@@ -49,8 +63,12 @@ class Dz11Activity : FragmentActivity(), OnMapReadyCallback {
             transaction.replace(R.id.dz9container, fragmentOne)
             transaction.commit()
         }
+    }
 
-        viewModel.load()
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.state.removeObserver(observerState)
+        viewModel.selectedItem.removeObserver(observerSelectedItem)
     }
 
     private fun showError(throwable: Throwable) {
@@ -75,21 +93,8 @@ class Dz11Activity : FragmentActivity(), OnMapReadyCallback {
     }
 
     private fun viewModelObserve() {
-        viewModel.state.observe(this, Observer {
-            when (it) {
-                is Dz11State.LoadFailed -> {
-                    showError(it.throwable)
-                }
-                is Dz11State.Data -> {
-                    drawCarsOnMap(it.list)
-                }
-            }
-        })
-
-        viewModel.selectedItem.observe(this, Observer<Poi> {
-            if (it != null)
-                focusOnTheCar(it)
-        })
+        viewModel.state.observeForever(observerState)
+        viewModel.selectedItem.observeForever(observerSelectedItem)
     }
 
     private fun drawCarsOnMap(listPoi: List<Poi>) {

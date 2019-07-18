@@ -16,6 +16,10 @@ class Dz11ViewModel : ViewModel(), CarRepositoryResult {
     private val carRepository: CarRepository = provideCarRepository()
     private lateinit var data: List<Poi>
 
+    init {
+        carRepository.getCarByCoord(CoordParams(Coordinate(2342.0, 342.0), Coordinate(3242.0, 3453.0)), this)
+    }
+
     override fun onDataReady(data: List<Poi>) {
         state.value = Dz11State.Data(data)
         this.data = data
@@ -25,10 +29,10 @@ class Dz11ViewModel : ViewModel(), CarRepositoryResult {
         state.value = Dz11State.LoadFailed(throwable)
     }
 
-    fun load() {
+    /*fun load() {
         if (state.value == null)
             carRepository.getCarByCoord(CoordParams(Coordinate(2342.0, 342.0), Coordinate(3242.0, 3453.0)), this)
-    }
+    }*/
 
     fun clickItem(item: Poi) {
         selectedItem.value = item
