@@ -110,5 +110,23 @@
             android:textColor="@color/mainActivityBackground"
             android:textSize="30sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonDz11part1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/homework11part1"
+            android:textColor="@color/mainActivityBackground"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonDz11part2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/homework11part2"
+            android:textColor="@color/mainActivityBackground"
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>
