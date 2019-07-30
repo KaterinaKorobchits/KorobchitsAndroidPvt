@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainActivityBackground">
+
+    <ProgressBar
+        android:id="@+id/dz12ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminateTint="@color/dz4Clock" />
+
+    <ScrollView
+        android:id="@+id/dz12StudentEdit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Dz6Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/dz6ImageUrl" />
+
+                <EditText
+                    android:id="@+id/dz8UrlEditText"
+                    style="@style/Dz6PropertyValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:backgroundTint="@android:color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="textUri"
+                    android:textColorHint="@android:color/white"
+                    android:textCursorDrawable="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Dz6Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/dz6Name" />
+
+                <EditText
+                    android:id="@+id/dz8NameEditText"
+                    style="@style/Dz6PropertyValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:backgroundTint="@android:color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColorHint="@android:color/white"
+                    android:textCursorDrawable="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Dz6Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/dz6Age" />
+
+                <EditText
+                    android:id="@+id/dz8AgeEditText"
+                    style="@style/Dz6PropertyValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:backgroundTint="@android:color/white"
+                    android:imeOptions="actionGo"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColorHint="@android:color/white"
+                    android:textCursorDrawable="@null" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/dz8SaveStudentButton"
+                style="@style/Dz6Button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/dz6_edit_button_selector"
+                android:text="@string/dz6SaveButton" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -2,11 +2,21 @@ package by.itacademy.korobchits.dz9
 
 import by.itacademy.classwork.cw9.entity.CarResponse
 import by.itacademy.classwork.cw9.entity.CoordParams
+import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class CarRepositoryRemote(private val api: Api) : CarRepository {
+
+    override fun getCars(params: CoordParams): Single<CarResponse> {
+        return api.getCars(
+            params.coord1.latitude,
+            params.coord1.longitude,
+            params.coord2.latitude,
+            params.coord2.longitude
+        )
+    }
 
     override fun getCarByCoord(params: CoordParams, listener: CarRepositoryResult) {
         api

@@ -69,6 +69,7 @@ class Dz11Activity : FragmentActivity(), OnMapReadyCallback {
         super.onDestroy()
         viewModel.state.removeObserver(observerState)
         viewModel.selectedItem.removeObserver(observerSelectedItem)
+        viewModel.disposable?.dispose()
     }
 
     private fun showError(throwable: Throwable) {
