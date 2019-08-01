@@ -68,6 +68,7 @@ class Dz12EditPresenter(private val idStudent: String) {
             .subscribe({
                 view?.finish()
             }, { throwable ->
+                view?.goneProgressBar()
                 view?.showError(throwable.toString())
                 view?.goBack()
             })
@@ -81,6 +82,7 @@ class Dz12EditPresenter(private val idStudent: String) {
             .subscribe({
                 view?.finish()
             }, { throwable ->
+                view?.goneProgressBar()
                 view?.showError(throwable.toString())
                 view?.goBack()
             })
