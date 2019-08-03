@@ -1,38 +1,43 @@
 package by.itacademy.korobchits.dz11.part2
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import by.itacademy.classwork.cw9.entity.CoordParams
 import by.itacademy.classwork.cw9.entity.Coordinate
 import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.dz9.CarRepository
-import by.itacademy.korobchits.dz9.CarRepositoryResult
 import by.itacademy.korobchits.dz9.provideCarRepository
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 
-class Dz11ViewModel : ViewModel(), CarRepositoryResult {
+class Dz11ViewModel : ViewModel() {
 
     val state: MutableLiveData<Dz11State> by lazy(LazyThreadSafetyMode.NONE) { MutableLiveData<Dz11State>() }
     val selectedItem: MutableLiveData<Poi> by lazy(LazyThreadSafetyMode.NONE) { MutableLiveData<Poi>() }
+    private var disposable: Disposable? = null
     private val carRepository: CarRepository = provideCarRepository()
-    private lateinit var data: List<Poi>
+    private var data: List<Poi> = mutableListOf()
 
     init {
-        carRepository.getCarByCoord(CoordParams(Coordinate(2342.0, 342.0), Coordinate(3242.0, 3453.0)), this)
+        disposable = carRepository
+            .getCars(CoordParams(Coordinate(2342.0, 342.0), Coordinate(3242.0, 3453.0)))
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                data = it.poiList
+                state.value = Dz11State.Data(data)
+                Log.e("AAA", "load success")
+            }, { throwable ->
+                state.value = Dz11State.LoadFailed(throwable)
+            })
     }
 
-    override fun onDataReady(data: List<Poi>) {
-        state.value = Dz11State.Data(data)
-        this.data = data
+    override fun onCleared() {
+        super.onCleared()
+        disposable?.dispose()
     }
-
-    override fun onError(throwable: Throwable) {
-        state.value = Dz11State.LoadFailed(throwable)
-    }
-
-    /*fun load() {
-        if (state.value == null)
-            carRepository.getCarByCoord(CoordParams(Coordinate(2342.0, 342.0), Coordinate(3242.0, 3453.0)), this)
-    }*/
 
     fun clickItem(item: Poi) {
         selectedItem.value = item
