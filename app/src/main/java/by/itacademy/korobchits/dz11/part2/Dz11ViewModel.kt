@@ -16,7 +16,7 @@ class Dz11ViewModel : ViewModel() {
 
     val state: MutableLiveData<Dz11State> by lazy(LazyThreadSafetyMode.NONE) { MutableLiveData<Dz11State>() }
     val selectedItem: MutableLiveData<Poi> by lazy(LazyThreadSafetyMode.NONE) { MutableLiveData<Poi>() }
-    var disposable: Disposable? = null
+    private var disposable: Disposable? = null
     private val carRepository: CarRepository = provideCarRepository()
     private var data: List<Poi> = mutableListOf()
 
@@ -32,6 +32,11 @@ class Dz11ViewModel : ViewModel() {
             }, { throwable ->
                 state.value = Dz11State.LoadFailed(throwable)
             })
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        disposable?.dispose()
     }
 
     fun clickItem(item: Poi) {

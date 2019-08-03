@@ -25,11 +25,11 @@ class Dz13Activity : Activity() {
 
         disposable = Observable
             .interval(1, TimeUnit.SECONDS)
+            .filter { it % 2 == 0L }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                if (it % 2 == 0L)
-                    dz13TextView.text = it.toString()
+                dz13TextView.text = it.toString()
             }, { throwable ->
                 dz13TextView.text = throwable.toString()
             })
