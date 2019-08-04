@@ -33,4 +33,19 @@ class FruitUnitTest {
 
         Assert.assertTrue(result == 0)
     }
+
+    @Test
+    fun test_3() {
+        val result = checkWin(
+            listOf(
+                listOf("orange"),
+                listOf("apple", "apple"),
+                listOf("banana", "orange", "apple"),
+                listOf("banana")
+            ),
+            listOf("orange", "apple", "apple", "guava", "banana", "orange", "apple", "banana")
+        )
+
+        Assert.assertTrue(result == 1)
+    }
 }
