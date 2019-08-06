@@ -1,8 +1,8 @@
 package by.itacademy.korobchits.dz9
 
-import by.itacademy.classwork.cw9.entity.CarResponse
-import by.itacademy.classwork.cw9.entity.CoordParams
-import by.itacademy.classwork.cw9.entity.Poi
+import by.itacademy.korobchits.dz9.entity.CarResponse
+import by.itacademy.korobchits.dz9.entity.CoordParams
+import by.itacademy.korobchits.dz9.entity.Poi
 import io.reactivex.Single
 
 interface CarRepository {

@@ -10,10 +10,10 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import by.itacademy.classwork.cw9.entity.CoordParams
-import by.itacademy.classwork.cw9.entity.Coordinate
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.R
+import by.itacademy.korobchits.dz9.entity.CoordParams
+import by.itacademy.korobchits.dz9.entity.Coordinate
+import by.itacademy.korobchits.dz9.entity.Poi
 
 class Dz9Fragment : Fragment(), Dz9PoiAdapter.ClickListener, CarRepositoryResult {
 

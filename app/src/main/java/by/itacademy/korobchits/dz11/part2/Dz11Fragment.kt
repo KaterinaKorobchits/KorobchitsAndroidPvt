@@ -10,10 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.R
 import by.itacademy.korobchits.dz9.Dz9PoiAdapter
 import by.itacademy.korobchits.dz9.MyDividerItemDecoration
+import by.itacademy.korobchits.dz9.entity.Poi
 
 class Dz11Fragment : Fragment(), Dz9PoiAdapter.ClickListener {
 

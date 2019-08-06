@@ -3,8 +3,8 @@ package by.itacademy.korobchits.dz9
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.R
+import by.itacademy.korobchits.dz9.entity.Poi
 
 class Dz9PoiAdapter(
     private var items: List<Poi>,

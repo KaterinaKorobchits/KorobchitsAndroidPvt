@@ -3,8 +3,8 @@ package by.itacademy.korobchits.dz9
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.R
+import by.itacademy.korobchits.dz9.entity.Poi
 
 class Dz9PoiHolder(view: View) : RecyclerView.ViewHolder(view) {
 

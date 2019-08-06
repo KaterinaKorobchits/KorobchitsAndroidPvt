@@ -7,10 +7,10 @@ import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.FragmentActivity
-import by.itacademy.classwork.cw9.entity.CoordParams
-import by.itacademy.classwork.cw9.entity.Coordinate
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.R
+import by.itacademy.korobchits.dz9.entity.CoordParams
+import by.itacademy.korobchits.dz9.entity.Coordinate
+import by.itacademy.korobchits.dz9.entity.Poi
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback

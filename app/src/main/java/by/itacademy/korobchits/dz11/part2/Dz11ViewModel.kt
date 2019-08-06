@@ -3,10 +3,10 @@ package by.itacademy.korobchits.dz11.part2
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import by.itacademy.classwork.cw9.entity.CoordParams
-import by.itacademy.classwork.cw9.entity.Coordinate
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.dz9.CarRepository
+import by.itacademy.korobchits.dz9.entity.CoordParams
+import by.itacademy.korobchits.dz9.entity.Coordinate
+import by.itacademy.korobchits.dz9.entity.Poi
 import by.itacademy.korobchits.dz9.provideCarRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

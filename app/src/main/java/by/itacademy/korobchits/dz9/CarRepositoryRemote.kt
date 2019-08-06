@@ -1,7 +1,7 @@
 package by.itacademy.korobchits.dz9
 
-import by.itacademy.classwork.cw9.entity.CarResponse
-import by.itacademy.classwork.cw9.entity.CoordParams
+import by.itacademy.korobchits.dz9.entity.CarResponse
+import by.itacademy.korobchits.dz9.entity.CoordParams
 import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Callback

@@ -9,8 +9,8 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import by.itacademy.classwork.cw9.entity.Poi
 import by.itacademy.korobchits.R
+import by.itacademy.korobchits.dz9.entity.Poi
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback

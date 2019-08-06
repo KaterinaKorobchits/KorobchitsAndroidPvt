@@ -1,4 +1,4 @@
-package by.itacademy.classwork.cw9.entity
+package by.itacademy.korobchits.dz9.entity
 
 import com.google.gson.annotations.SerializedName
 

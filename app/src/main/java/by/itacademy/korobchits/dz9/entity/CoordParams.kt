@@ -1,4 +1,4 @@
-package by.itacademy.classwork.cw9.entity
+package by.itacademy.korobchits.dz9.entity
 
 data class CoordParams(
     val coord1: Coordinate,

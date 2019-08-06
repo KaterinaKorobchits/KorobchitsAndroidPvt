@@ -1,6 +1,6 @@
 package by.itacademy.korobchits.dz11.part2
 
-import by.itacademy.classwork.cw9.entity.Poi
+import by.itacademy.korobchits.dz9.entity.Poi
 
 sealed class Dz11State {
 
