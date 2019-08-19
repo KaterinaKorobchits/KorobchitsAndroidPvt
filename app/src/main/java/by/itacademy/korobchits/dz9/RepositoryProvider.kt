@@ -1,9 +1,13 @@
 package by.itacademy.korobchits.dz9
 
+import by.itacademy.korobchits.app.App
 import by.itacademy.korobchits.dz12.StudentRepository
 import by.itacademy.korobchits.dz12.StudentRepositoryRemote
+import by.itacademy.korobchits.dz15.AppDatabase
 
 fun provideCarRepository(): CarRepository {
+
+    val poiDao = AppDatabase.getInstance(App.instance).getPoiDao()
 
     return CarRepositoryRemote(
         NetProvider.provideApi(
@@ -12,7 +16,7 @@ fun provideCarRepository(): CarRepository {
                 NetProvider.provideOkHttp(),
                 NetProvider.provideGson()
             )
-        )
+        ), poiDao
     )
 }
 

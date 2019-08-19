@@ -1,7 +1,6 @@
 package by.itacademy.korobchits.dz9
 
-import by.itacademy.korobchits.app.App
-import by.itacademy.korobchits.dz15.AppDatabase
+import by.itacademy.korobchits.dao.PoiDao
 import by.itacademy.korobchits.dz9.entity.CarResponse
 import by.itacademy.korobchits.dz9.entity.CoordParams
 import io.reactivex.Single
@@ -9,9 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CarRepositoryRemote(private val api: Api) : CarRepository {
-
-    private val poiDao = AppDatabase.getInstance(App.instance).getPoiDao()
+class CarRepositoryRemote(private val api: Api, private val poiDao: PoiDao) : CarRepository {
 
     override fun getCars(params: CoordParams): Single<CarResponse> {
         return api
@@ -25,8 +22,9 @@ class CarRepositoryRemote(private val api: Api) : CarRepository {
                 poiDao.insert(it.poiList)
             }
             .onErrorResumeNext {
-                if (poiDao.get().isNotEmpty()) {
-                    Single.just(CarResponse(poiDao.get()))
+                var poiList = poiDao.get()
+                if (poiList.isNotEmpty()) {
+                    Single.just(CarResponse(poiList))
                 } else
                     Single.error(it)
             }
